@@ -1,12 +1,21 @@
- import { IoIosSearch } from "react-icons/io";
- export const Search = () => {
+import { IoIosSearch } from "react-icons/io";
+export const Search = () => {
   return (
-    <div className="flex w-full items-center justify-center pt-5 bg-cyan-100/30">
-      <div className="flex p-1 border-2 border-gray-400 w-[50%] justify-between px-5 bg-white rounded-2xl">
+    <form className="flex w-full items-center justify-center md:pt-8 bg-cyan-100/30 pb-2">
+      <div className="flex md:p-1 border-2 border-gray-300 w-[80%]  md:w-[50%] justify-between md:px-5 bg-white rounded-2xl ">
         <IoIosSearch className="size-10" />
-         <input type="text" placeholder="Search for courses" className="w-full h-full py-2.5"  />
-        <button type="input" className="bg-blue-600 text-white font-semibold px-4 my-1 rounded-xl">Search</button>
+        <input
+          type="text"
+          placeholder="Search for courses"
+          className="w-full h-full py-2.5 outline-none"
+        />
+        <button
+          type="input"
+          className="bg-blue-600 text-white font-semibold md:px-4 px-2 my-1 rounded-[10px] "
+        >
+          Search
+        </button>
       </div>
-    </div>
+    </form>
   );
 };

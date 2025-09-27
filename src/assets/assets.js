@@ -126,7 +126,7 @@ export const dummyTestimonial = [
     },
 ];
 
-export const dummyDashboardData = {
+export const DummyDashboardData = {
     "totalEarnings": 707.38,
     "enrolledStudentsData": [
         {
