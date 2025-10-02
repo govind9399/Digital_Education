@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { RiGraduationCapFill } from "react-icons/ri";
- import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { assets } from "../assets/assets";
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,13 +25,19 @@ export const Login = () => {
 
   return (
     <>
-      <div className="main ">
-        <div className="header">
-          <h1 className="flex text-3xl ml-[50px] pt-5 font-semibold ">
-            <RiGraduationCapFill className="mr-[15px] mt-1" />
-             EduLearn
-          </h1>
-        </div>
+         <NavLink to="/">
+          <div className="flex font-bold text-xl  md:text-2xl">
+            <img
+              src={assets.logo2}
+              w
+              alt="logo"
+              className="w-7 md:w-12 lg:w-12 cursor-pointer "
+            />
+            <span className="ml-1.5 pt-1 md:text-2xl text-[20px]">
+              EduSphere
+            </span>
+          </div>
+        </NavLink>
 
         <div className="flex flex-col items-center justify-center w-100% h-[90vh]">
           <h1 className="text-3xl font-semibold">Welcome back</h1>
@@ -58,24 +65,26 @@ export const Login = () => {
               className="w-[280px] bg-stone-200 p-2 md:w-[400px]"
             />
             <NavLink to="./pages/studentDashboard">
-              <button type="submit" className="bg-blue-600 text-white font-semibold w-[270px] p-3 rounded-xl md:w-[400px] ">
+              <button
+                type="submit"
+                className="bg-blue-600 text-white font-semibold w-[270px] p-3 rounded-xl md:w-[400px] "
+              >
                 Log in
               </button>
             </NavLink>
-         
-         <NavLink to="forgetPassword">
-            <span className="text-blue-700"> Forget password</span>
-          </NavLink>
+
+            <NavLink to="/forget-password">
+              <span className="text-blue-700"> Forget password</span>
+            </NavLink>
 
             <p>
               Don't have an accout?{" "}
-              <NavLink to="Signup" className="text-blue-700">
+              <NavLink to="/signup" className="text-blue-700">
                 Sign up
               </NavLink>{" "}
             </p>
           </form>
         </div>
-      </div>
-    </>
+     </>
   );
 };

@@ -19,6 +19,8 @@ import { StudentsEnrolled } from "./pages/educator/StudentsEnrolled";
 // Auth pages
 import { Login } from "./Authentication/Login";
 import { Signup } from "./Authentication/Signup";
+import { SignIn } from "@clerk/clerk-react";
+import { ForgetPassword } from "./Authentication/forgetPassword";
 
 // Layout for student pages (with NavBar)
 const StudentLayout = () => (
@@ -38,13 +40,34 @@ const EducatorLayout = () => (
 const App = () => {
   const router = createBrowserRouter([
     {
+      path: "/",
       element: <StudentLayout />, // All student pages use this layout
       children: [
         { path: "/", element: <Home /> },
         { path: "/my-enrollments", element: <MyEnrollments /> },
-        { path: "/courses-list", element: <CoursesList /> },
+
+        {
+          path: "/courses-list",
+          element: <CoursesList />,
+          children: [
+            {
+              path: "/courses-list/:id",
+              element: <CoursesList />,
+            },
+          ],
+        },
         { path: "/player/:courseId", element: <Player /> },
-        { path: "/course-details/:id", element: <CourseDetails /> },
+
+        {
+          path: "/course-details",
+          element: <CourseDetails />,
+          children: [
+            {
+              path: "/course-details/:id",
+              element: <CourseDetails />,
+            },
+          ],
+        },
         { path: "/loading/:path", element: <Loading /> },
       ],
     },
@@ -52,16 +75,25 @@ const App = () => {
       path: "/educator",
       element: <EducatorLayout />, // Educator pages layout
       children: [
-        { index: true, element: <Dashboard /> }, // /educator -> Dashboard
+        { index: true, element: <Dashboard /> },
         { path: "dashboard", element: <Dashboard /> },
         { path: "add-course", element: <AddCourse /> },
         { path: "my-courses", element: <MyCourse /> },
         { path: "students-enrolled", element: <StudentsEnrolled /> },
       ],
     },
-    // Optional: Login / Signup
-    { path: "/login", element: <Login /> },
-    { path: "/signup", element: <Signup /> },
+    {
+      path: "/signup",
+      element: <Signup />,
+    },
+    {
+      path: "/login",
+      element: <Login />,
+    },
+    {
+      path: "/forget-password",
+      element: <ForgetPassword />,
+    },
   ]);
 
   return <RouterProvider router={router} />;

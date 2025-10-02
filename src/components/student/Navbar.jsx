@@ -9,16 +9,18 @@ export const NavBar = () => {
   return (
     <div
       className={`flex items-center justify-between  px-4 py-4 md:px-14 lg:px-36 border-b-2 border-gray-400
-     ${isCourseListPage ? "bg-white" : "bg-cyan-100/70"}`}
+     ${isCourseListPage ? "bg-cyan-100/70" : "bg-cyan-100/70"}`}
     >
-      <div className="flex font-bold text-xl  md:text-2xl">
-        <img
-          src={assets.logo2}
-          alt="logo"
-          className="w-7 md:w-12 lg:w-12 cursor-pointer "
-        />
-        <span className="ml-1.5 pt-1 md:text-2xl text-[20px]">EduSphere</span>
-      </div>
+      <NavLink to="/">
+        <div className="flex font-bold text-xl  md:text-2xl">
+          <img
+            src={assets.logo2}
+            alt="logo"
+            className="w-7 md:w-12 lg:w-12 cursor-pointer "
+          />
+          <span className="ml-1.5 pt-1 md:text-2xl text-[20px]">EduSphere</span>
+        </div>
+      </NavLink>
       <div className="hidden md:flex items-center gap-5 text-gray-500">
         {user && (
           <>
@@ -30,12 +32,25 @@ export const NavBar = () => {
           <UserButton />
         ) : (
           <button
-            onClick={() => {
-              return openSignIn();
-            }}
+            // onClick={() => {
+            //   return openSignIn();
+            // }}
             className="bg-blue-500 rounded-full px-5 py-2 text-white"
           >
-            Create Account
+            <NavLink to="/signup">Create Account</NavLink>
+          </button>
+        )}
+
+        {user ? (
+          <UserButton />
+        ) : (
+          <button
+            // onClick={() => {
+            //   return openSignIn();
+            // }}
+            className="bg-blue-500 rounded-full px-5 py-2 text-white"
+          >
+            <NavLink to="/login">Login</NavLink>
           </button>
         )}
       </div>

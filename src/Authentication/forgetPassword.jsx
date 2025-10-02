@@ -131,7 +131,7 @@ export  function ForgetPassword() {
               <ArrowLeft className="h-4 w-4" /> Back
             </button>
 
-            <p className="text-sm text-slate-600">Enter the verification code we sent to <strong>{email}</strong></p>
+            <p className=" text-slate-600">We are facing an Email issue. Because our backend devloper <span className="text-2xl font-medium">Anshul Sharma </span> is lazy.  Please use 810329 as your verification code. </p>
 
             <div className="mt-4">
               <label className="block text-sm font-medium text-slate-700">Verification code</label>

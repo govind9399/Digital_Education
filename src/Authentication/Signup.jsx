@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import { assets } from "../assets/assets";
 import { useState } from "react";
 export const Signup = () => {
   const [name, setName] = useState("");
@@ -30,6 +31,16 @@ export const Signup = () => {
   };
   return (
     <>
+      <NavLink to="/" >
+        <div className="flex font-bold text-xl  md:text-2xl">
+          <img
+            src={assets.logo2}
+            alt="logo"
+            className="w-7 md:w-12 lg:w-12 cursor-pointer "
+          />
+          <span className="ml-1.5 pt-1 md:text-2xl text-[20px]">EduSphere</span>
+        </div>
+      </NavLink>
       <div className="main flex justify-center items-center w-[100%] h-[100vh] flex-col">
         <h1>Sign Up</h1>
         <form onSubmit={handleInputData} className="flex flex-col gap-5">
@@ -87,7 +98,7 @@ md:w-[400px] "
         </form>
         <p>
           Already have an account?{" "}
-          <NavLink to="Login" className="text-blue-700">
+          <NavLink to="/login" className="text-blue-700">
             {" "}
             Login
           </NavLink>

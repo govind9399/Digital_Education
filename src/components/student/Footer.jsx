@@ -2,7 +2,7 @@ import { assets } from "../../assets/assets";
 
 export const Footer = () => {
   return (
-    <>
+    <footer>
       <div className="bg-gray-900 text-white md:flex hidden  justify-evenly text-center w-full py-10">
         <div className=" md:w-[30%] flex flex-col  justify-center items-center mb-4">
           <div className="flex font-bold text-xl  md:text-2xl mb-6 md:mb-8">
@@ -90,6 +90,6 @@ export const Footer = () => {
           </div>
         </div>
       </div>
-    </>
+    </footer>
   );
 };
