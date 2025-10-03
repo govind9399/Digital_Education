@@ -73,7 +73,7 @@ const App = () => {
     },
     {
       path: "/educator",
-      element: <EducatorLayout />, // Educator pages layout
+      element: <Educator />, // Educator pages layout
       children: [
         { index: true, element: <Dashboard /> },
         { path: "dashboard", element: <Dashboard /> },

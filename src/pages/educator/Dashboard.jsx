@@ -1,10 +1,9 @@
-import { NavBar } from "../../components/educator/NavBar"
+import { Navbar } from "../../components/educator/NavBar"
 
  export const Dashboard=()=>{
      return(
         <>
-          <NavBar/>
-         <h1>Educator Dashboard</h1>
+          <h1>Educator Dashboard</h1>
         </>
      )
  }

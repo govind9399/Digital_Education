@@ -60,7 +60,7 @@ export const NavBar = () => {
         <div className="flex justify-center text-center gap-1 text-[14px] text-blue-700 font-[400] pl-3  md:hidden ">
           {user && (
             <>
-              <button>Become Educator</button>
+              <NavLink to='/educator'>Become Educator</NavLink>
               <NavLink to="/my-enrollments">My Enrollments</NavLink>
             </>
           )}
